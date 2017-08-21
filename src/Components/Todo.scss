@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+
+$standard-font: 'Raleway', sans-serif;
+
+$almost-white: #eee;
+$grey: #777;
+$light-grey: #ddd;
+$primary-one: #b1ee97;
+$primary-border: #7ba669;
+
+* {
+    font-family: $standard-font;
+}
+
+.display-item {
+    background-color: $light-grey;
+    border: 2px $grey solid;
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 5px;
+}
+
+.todo-div {
+    @extend .display-item;
+    display: flex;
+    :nth-child(2n-1) {
+        flex-basis: 20%
+    }
+    :nth-child(2n) {
+        flex-basis: 100%
+    }
+}
+
+.todo-wrapper {
+    @extend .display-item;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+*[spacing=space-between] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    border: 1px solid $grey;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+.fancy-button {
+    background-color: $primary-one;
+    border-color: $primary-border;
+    height: 3rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: .5rem;
+}
+
+input.fancy-input {
+    border: none;
+    border-bottom: 1px $grey solid;
+    border-left: 1px $grey solid;
+    border-radius: 4px;
+    padding: 4px;
+    width: 100%;
+    margin:4px;
+    flex-basis: 70%;
+    background-color: $almost-white;
+}
